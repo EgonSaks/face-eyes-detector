@@ -7,7 +7,7 @@ eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
 img = cv2.imread("before.jpeg")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-faces = face_cascade.detectMultiScale(gray, 1.5, 5)
+faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 #faces = face_cascade.detectMultiScale(gray)
 
 # Makes a frame around face and eyes
