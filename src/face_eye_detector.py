@@ -4,10 +4,10 @@ face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
 
 # Add your image here from where you want to detect faces and eyes
-img = cv2.imread("photo.jpg")
+img = cv2.imread("before.jpeg")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-faces = face_cascade.detectMultiScale(gray, 2, 5)
+faces = face_cascade.detectMultiScale(gray, 1.5, 5)
 #faces = face_cascade.detectMultiScale(gray)
 
 # Makes a frame around face and eyes
@@ -26,5 +26,5 @@ k = cv2.waitKey(0)
 if k == 27: # wait for ESC key to exit
     cv2.destroyAllWindows()
 elif k == ord('s'): # wait for 's' key to save and exit
-    cv2.imwrite('messigray.png',img)
+    cv2.imwrite('after.png',img)
     cv2.destroyAllWindows()
